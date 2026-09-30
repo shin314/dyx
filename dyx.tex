@@ -1,0 +1,33 @@
+\documentclass{ltjsarticle}
+
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+
+\newcommand{\dyx}{%
+  神%
+  \rlap{%
+    \ifnum\ltjgetparameter{direction}=3\relax
+      % 縦書き
+      \raisebox{0.18em}{%
+        \hspace{-0.92em}%
+        °%
+      }%
+    \else
+      % 横書き
+      \raisebox{0.03em}{%
+        \hspace{-0.30em}%
+        °%
+      }%
+    \fi
+  }%
+}
+
+\begin{document}
+
+テスト：\\
+比較用：聖神主、生命を施す者。\\
+テスト：聖\dyx 主、生命を施す者。\\
+比較用：聖神主、生命を施す者。\\
+
+
+\end{document}
